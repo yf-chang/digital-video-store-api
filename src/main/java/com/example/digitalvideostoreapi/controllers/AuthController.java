@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collections;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://github.com/yf-chang/Digital-Video-Store.git")
 @RestController
 public class AuthController
 {
