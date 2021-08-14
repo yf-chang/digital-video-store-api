@@ -30,6 +30,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/auth").permitAll()
                 .antMatchers("/movies/**").permitAll()
                 .antMatchers("/tvs/**").permitAll()
+                .antMatchers(("/banners/**")).permitAll()
                 .anyRequest().authenticated();
 
     }
