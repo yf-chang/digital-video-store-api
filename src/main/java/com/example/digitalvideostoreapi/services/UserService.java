@@ -26,15 +26,15 @@ public class UserService implements UserDetailsService
     public UserModel addUser(UserModel user) throws Exception
     {
         //account validation
-        if(user.getEmail()==null){
+        if(user.getEmail().length()==0){
             throw new Exception ("Email cannot be empty.");
         }
 
-        if(user.getUsername()==null){
+        if(user.getUsername().length()==0){
             throw new Exception ("Username cannot be empty.");
         }
 
-        if(user.getPassword()==null){
+        if(user.getPassword().length()==0){
             throw new Exception ("Password cannot be empty.");
         }
 
