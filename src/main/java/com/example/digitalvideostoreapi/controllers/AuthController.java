@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collections;
 
-@CrossOrigin(origins = "https://digital-video-store-frontend.herokuapp.com/")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class AuthController
 {
