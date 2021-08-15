@@ -21,8 +21,8 @@ public class MovieController {
     @GetMapping("/movies")
     public ResponseEntity getMovies()
     {
-        var customizedResponse = new CustomizedResponse(" A list of all movies" , service.getMovies());
-        return new ResponseEntity(customizedResponse, HttpStatus.OK);
+
+        return new ResponseEntity(new CustomizedResponse(" A list of all movies" , service.getMovies()), HttpStatus.OK);
     }
 
     //get movie by id
@@ -59,8 +59,8 @@ public class MovieController {
     @GetMapping("/movies/title")
     public ResponseEntity getMoviesByTitle(@RequestParam(value = "name") String t)
     {
-        var customizedResponse = new CustomizedResponse(" A list of movies with the title : " + t, service.getMoviesWithTitle(t));
-        return new ResponseEntity(customizedResponse, HttpStatus.OK);
+
+        return new ResponseEntity(new CustomizedResponse(" A list of movies with the title : " + t, service.getMoviesWithTitle(t)), HttpStatus.OK);
     }
 
 
@@ -68,8 +68,7 @@ public class MovieController {
     @GetMapping("/movies/featured")
     public ResponseEntity getFeaturedMovies()
     {
-        var customizedResponse = new CustomizedResponse(" A list of featured movies : ", service.getFeaturedMovies());
-        return new ResponseEntity(customizedResponse, HttpStatus.OK);
+        return new ResponseEntity(new CustomizedResponse(" A list of featured movies : ", service.getFeaturedMovies()), HttpStatus.OK);
     }
 
 
@@ -90,7 +89,6 @@ public class MovieController {
     })
     public ResponseEntity editMovie(@PathVariable("id") String id, @RequestBody MovieModel newMovie )
     {
-        var customizedResponse = new CustomizedResponse(" Movie with ID:  " + id + "was updated successfully " , Collections.singletonList(service.editMovie(id, newMovie)));
-        return new ResponseEntity(customizedResponse, HttpStatus.OK);
+        return new ResponseEntity(new CustomizedResponse(" Movie with ID:  " + id + "was updated successfully " , Collections.singletonList(service.editMovie(id, newMovie))), HttpStatus.OK);
     }
 }
