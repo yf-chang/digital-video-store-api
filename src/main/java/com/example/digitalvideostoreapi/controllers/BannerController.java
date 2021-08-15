@@ -19,8 +19,7 @@ public class BannerController {
     @GetMapping("/banners")
     public ResponseEntity getBanners()
     {
-        var customizedResponse = new CustomizedResponse(" A list of all banners" , service.getBanners());
-        return new ResponseEntity(customizedResponse, HttpStatus.OK);
+        return new ResponseEntity(new CustomizedResponse(" A list of all banners" , service.getBanners()), HttpStatus.OK);
     }
 
     //create a banner

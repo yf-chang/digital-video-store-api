@@ -21,8 +21,7 @@ public class TVController {
     @GetMapping("/tvs")
     public ResponseEntity getTVs()
     {
-        var customizedResponse = new CustomizedResponse(" A list of TVs" , service.getTVs());
-        return new ResponseEntity(customizedResponse, HttpStatus.OK);
+        return new ResponseEntity(new CustomizedResponse(" A list of TVs" , service.getTVs()), HttpStatus.OK);
     }
 
     //get tv by id
@@ -59,8 +58,8 @@ public class TVController {
     @GetMapping("/tvs/title")
     public ResponseEntity getTVsByTitle(@RequestParam(value = "name") String t)
     {
-        var customizedResponse = new CustomizedResponse(" A list of TVs with the title : " + t, service.getTVsWithTitle(t));
-        return new ResponseEntity(customizedResponse, HttpStatus.OK);
+
+        return new ResponseEntity(new CustomizedResponse(" A list of TVs with the title : " + t, service.getTVsWithTitle(t)), HttpStatus.OK);
     }
 
 
@@ -68,8 +67,7 @@ public class TVController {
     @GetMapping("/tvs/featured")
     public ResponseEntity getFeaturedTVs()
     {
-        var customizedResponse = new CustomizedResponse(" A list of featured TVs : ", service.getFeaturedTVs());
-        return new ResponseEntity(customizedResponse, HttpStatus.OK);
+        return new ResponseEntity(new CustomizedResponse(" A list of featured TVs : ", service.getFeaturedTVs()), HttpStatus.OK);
     }
 
 
@@ -90,8 +88,7 @@ public class TVController {
     })
     public ResponseEntity editTV(@PathVariable("id") String id, @RequestBody TVModel newTV)
     {
-        var customizedResponse = new CustomizedResponse(" TV with ID:  " + id + " was updated successfully " , Collections.singletonList(service.editTV(id, newTV)));
-        return new ResponseEntity(customizedResponse, HttpStatus.OK);
+        return new ResponseEntity(new CustomizedResponse(" TV with ID:  " + id + " was updated successfully " , Collections.singletonList(service.editTV(id, newTV))), HttpStatus.OK);
     }
 
 }
