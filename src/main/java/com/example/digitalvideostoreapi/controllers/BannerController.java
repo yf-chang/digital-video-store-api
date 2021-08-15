@@ -9,7 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "https://github.com/yf-chang/Digital-Video-Store.git")
+@CrossOrigin(origins = "https://digital-video-store-frontend.herokuapp.com/")
 @RestController
 public class BannerController {
     @Autowired
