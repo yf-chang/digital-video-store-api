@@ -2,7 +2,6 @@ package com.example.digitalvideostoreapi.controllers;
 
 import com.example.digitalvideostoreapi.CustomizedResponse;
 import com.example.digitalvideostoreapi.models.BannerModel;
-import com.example.digitalvideostoreapi.models.MovieModel;
 import com.example.digitalvideostoreapi.services.BannerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
